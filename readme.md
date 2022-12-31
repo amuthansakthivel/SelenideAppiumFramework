@@ -45,7 +45,7 @@ For usage purpose, I have implemented custom command to scroll to an element.
 ```java
 public class ProductsListingScreen {
 
-  @AndroidFindBy(accessibility = "//android.widget.TextView[@text='$7.99']/preceding-sibling::android.view.ViewGroup/android.widget.ImageView")
+  @AndroidFindBy(xpath = "//android.widget.TextView[@text='$7.99']/preceding-sibling::android.view.ViewGroup/android.widget.ImageView")
   @iOSXCUITFindBy(accessibility = "Sauce Labs Onesie")
   private WebElement oneSieProduct;
   
