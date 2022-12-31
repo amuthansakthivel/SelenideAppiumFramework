@@ -1,5 +1,6 @@
 package com.screens;
 
+import com.codeborne.selenide.As;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.appium.AppiumSelectors;
 import com.commands.ScrollToElement;
@@ -11,25 +12,30 @@ import org.openqa.selenium.WebElement;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.appium.AppiumClickOptions.tap;
 import static com.locator.LocatorIdentifier.getLocator;
 
 public class ProductsListingScreen {
 
+  @As("bike light product")
   @AndroidFindBy(xpath = "//android.widget.TextView[@text='$9.99']/preceding-sibling::android.view.ViewGroup/android.widget.ImageView")
   @iOSXCUITFindBy(accessibility = "Sauce Labs Bike Light")
   private WebElement bikeLightProduct;
 
+  @As("one sie product")
   @AndroidFindBy(xpath = "//android.widget.TextView[@text='$7.99']/preceding-sibling::android.view.ViewGroup/android.widget.ImageView")
   @iOSXCUITFindBy(accessibility = "Sauce Labs Onesie")
   private ElementsCollection oneSieProduct;
 
+  @As("Footer text")
   private static final By FOOTER_ANDROID = AppiumSelectors.withText("All Rights Reserved");
+
+  @As("Footer text")
   private static final By FOOTER_IOS = AppiumSelectors.withName("All Rights Reserved");
 
   public ProductDetailsScreen selectBikeLightProduct() {
-    $(bikeLightProduct).shouldBe(visible).click();
+    $(bikeLightProduct).shouldBe(visible).click(tap()); //native event tap
     return page(ProductDetailsScreen.class);
   }
 
