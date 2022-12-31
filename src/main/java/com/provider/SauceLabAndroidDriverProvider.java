@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import javax.annotation.Nonnull;
 import java.net.URL;
+import java.time.Duration;
 
 public class SauceLabAndroidDriverProvider implements WebDriverProvider {
 
@@ -21,6 +22,7 @@ public class SauceLabAndroidDriverProvider implements WebDriverProvider {
     options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
     options.setPlatformName("Android");
     options.setDeviceName("Android Emulator");
+    options.setUiautomator2ServerInstallTimeout(Duration.ofSeconds(2));
     options.setApp(System.getProperty("user.dir") + "/apps/Android-MyDemoAppRN.1.3.0.build-244.apk");
     return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);
   }
