@@ -1,10 +1,10 @@
-### Selenide-Appium Example
+## Selenide-Appium Example
 
 This project will give an example of how we can automate native mobile application using Selenide-Appium Library. 
 
 To know more - [Selenide-Appium](https://github.com/selenide/selenide-appium)
 
-#### How to choose mobile OS at runtime?
+### How to choose mobile OS at runtime?
 
 App under test is having same flow in both android and ios. So we need to tell Selenide-Appium which implementation to choose. We have two implementation classes, each for opening android and ios apps.
 
@@ -36,7 +36,7 @@ The problem with this approach is to change the value manually or write some log
 `mvn clean test -Dselenide.browser=com.provider.SauceLabAndroidDriverProvider` to run test on android
 `mvn clean test -Dselenide.browser=com.provider.SauceLabIosDriverProvider` to run test on ios
 
-#### Custom Commands
+### Custom Commands
 
 We can create our own custom conditions by implementing Command Interface.
 
@@ -56,7 +56,7 @@ public class ProductsListingScreen {
 }
 ```
 
-#### Custom Condition
+### Custom Condition
 
 We can create custom conditions to match our requirements.
 In my case, for Android - I want to use `text` attribute and for iOS - I want to use `label` attribute for assertion.
