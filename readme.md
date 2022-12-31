@@ -85,8 +85,8 @@ public final class CustomCondition {
 ```java
 public class ProductsListingScreen {
 
-  private final By FOOTER_ANDROID = AppiumSelectors.withText("All Rights Reserved");
-  private final By FOOTER_IOS = AppiumSelectors.withName("All Rights Reserved");
+  private static final By FOOTER_ANDROID = AppiumSelectors.withText("All Rights Reserved");
+  private static final By FOOTER_IOS = AppiumSelectors.withName("All Rights Reserved");
 
   public void checkWhetherFooterIsPresent() {
     getLocator(FOOTER_ANDROID, FOOTER_IOS)
