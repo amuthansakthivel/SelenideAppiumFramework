@@ -6,7 +6,7 @@ import com.screens.ProductDetailsScreen;
 import com.tests.base.TestSetup;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.appium.ScreenObject.screen;
 
 class DeepLinkTest extends TestSetup {
 
@@ -14,7 +14,7 @@ class DeepLinkTest extends TestSetup {
   void testDeepLinks() {
     openDeepLink();
 
-    page(ProductDetailsScreen.class)
+    screen(ProductDetailsScreen.class)
         .checkWhetherAddToCartButtonPresent();
   }
 

@@ -4,7 +4,7 @@ import com.screens.ProductsListingScreen;
 import com.tests.base.TestSetup;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.appium.ScreenObject.screen;
 
 class CustomCommandTest extends TestSetup {
 
@@ -12,7 +12,7 @@ class CustomCommandTest extends TestSetup {
 
   @Test
   void testScrollToElement() {
-    productsListingScreen = page(ProductsListingScreen.class);
+    productsListingScreen = screen(ProductsListingScreen.class);
 
     productsListingScreen
         .selectOneSieProduct()

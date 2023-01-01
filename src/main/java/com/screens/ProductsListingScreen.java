@@ -12,8 +12,8 @@ import org.openqa.selenium.WebElement;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
 import static com.codeborne.selenide.appium.AppiumClickOptions.tap;
+import static com.codeborne.selenide.appium.ScreenObject.screen;
 import static com.locator.LocatorIdentifier.getLocator;
 
 public class ProductsListingScreen {
@@ -36,12 +36,12 @@ public class ProductsListingScreen {
 
   public ProductDetailsScreen selectBikeLightProduct() {
     $(bikeLightProduct).shouldBe(visible).click(tap()); //native event tap
-    return page(ProductDetailsScreen.class);
+    return screen(ProductDetailsScreen.class);
   }
 
   public ProductDetailsScreen selectOneSieProduct() {
     oneSieProduct.get(0).execute(new ScrollToElement()).shouldBe(visible).click();
-    return page(ProductDetailsScreen.class);
+    return screen(ProductDetailsScreen.class);
   }
 
   public void checkWhetherFooterIsPresent() {

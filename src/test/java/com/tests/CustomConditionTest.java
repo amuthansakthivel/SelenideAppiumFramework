@@ -4,7 +4,7 @@ import com.screens.ProductsListingScreen;
 import com.tests.base.TestSetup;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.appium.ScreenObject.screen;
 
 class CustomConditionTest extends TestSetup {
 
@@ -12,7 +12,7 @@ class CustomConditionTest extends TestSetup {
 
   @Test
   void testCustomCollection() {
-    productsListingScreen = page(ProductsListingScreen.class);
+    productsListingScreen = screen(ProductsListingScreen.class);
 
     productsListingScreen
         .checkWhetherFooterIsPresent();

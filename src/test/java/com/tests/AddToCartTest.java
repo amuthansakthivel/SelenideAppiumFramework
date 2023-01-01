@@ -1,10 +1,9 @@
 package com.tests;
 
+import com.codeborne.selenide.appium.ScreenObject;
 import com.screens.ProductsListingScreen;
 import com.tests.base.TestSetup;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selenide.page;
 
 class AddToCartTest extends TestSetup {
 
@@ -12,7 +11,7 @@ class AddToCartTest extends TestSetup {
 
   @Test
   void testSauceLabsApp() {
-    productsListingScreen = page(ProductsListingScreen.class);
+    productsListingScreen = ScreenObject.screen(ProductsListingScreen.class);
 
     productsListingScreen
         .selectBikeLightProduct()
