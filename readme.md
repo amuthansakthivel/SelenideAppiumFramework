@@ -38,7 +38,7 @@ The problem with this approach is to change the value manually or write some log
 
 ### Custom Commands
 
-We can create our own custom conditions by implementing Command Interface.
+We can create our own custom command by implementing Command Interface.
 
 For usage purpose, I have implemented custom command to scroll to an element.
 
@@ -89,7 +89,7 @@ public class ProductsListingScreen {
   private static final By FOOTER_IOS = AppiumSelectors.withName("All Rights Reserved");
 
   public void checkWhetherFooterIsPresent() {
-    getLocator(FOOTER_ANDROID, FOOTER_IOS)
+    $(getLocator(FOOTER_ANDROID, FOOTER_IOS))
         .execute(new ScrollToElement())
         .shouldHave(CustomCondition.attributeMatching("text", "label", "Sauce Labs"));
   }
