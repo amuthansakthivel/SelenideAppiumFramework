@@ -1,7 +1,6 @@
 package com.screens;
 
 import com.codeborne.selenide.As;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.appium.AppiumSelectors;
 import com.commands.ScrollToElement;
 import com.conditions.CustomCondition;
@@ -26,7 +25,7 @@ public class ProductsListingScreen {
   @As("one sie product")
   @AndroidFindBy(xpath = "//android.widget.TextView[@text='$7.99']/preceding-sibling::android.view.ViewGroup/android.widget.ImageView")
   @iOSXCUITFindBy(accessibility = "Sauce Labs Onesie")
-  private ElementsCollection oneSieProduct;
+  private WebElement oneSieProduct;
 
   @As("Footer text")
   private static final By FOOTER_ANDROID = AppiumSelectors.withText("All Rights Reserved");
@@ -40,7 +39,7 @@ public class ProductsListingScreen {
   }
 
   public ProductDetailsScreen selectOneSieProduct() {
-    oneSieProduct.get(0).execute(new ScrollToElement()).shouldBe(visible).click();
+    $(oneSieProduct).scrollTo().shouldBe(visible).click();
     return screen(ProductDetailsScreen.class);
   }
 
