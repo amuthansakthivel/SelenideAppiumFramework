@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: maven
     directory: "/"
     schedule:
-      interval: daily
+      interval: monthly
       time: "07:38"
     open-pull-requests-limit: 10
     commit-message:
