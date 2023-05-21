@@ -24,6 +24,6 @@ public class SauceLabAndroidDriverProvider implements WebDriverProvider {
     //options.setUiautomator2ServerInstallTimeout(Duration.ofSeconds(2)); //Seems to be not working
     options.setCapability("uiautomator2ServerInstallTimeout", 60000);
     options.setApp(System.getProperty("user.dir") + "/apps/Android-MyDemoAppRN.1.3.0.build-244.apk");
-    return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);
+    return new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
   }
 }

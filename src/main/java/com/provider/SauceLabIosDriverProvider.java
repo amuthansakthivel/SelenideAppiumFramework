@@ -22,9 +22,9 @@ public class SauceLabIosDriverProvider implements WebDriverProvider {
     XCUITestOptions options = new XCUITestOptions();
     options.setAutomationName(AutomationName.IOS_XCUI_TEST);
     options.setWdaLaunchTimeout(Duration.ofMinutes(10));
-    options.setDeviceName("iPhone 12");
+    options.setDeviceName("iPhone 13");
     options.setFullReset(false);
     options.setApp(System.getProperty("user.dir") + "/apps/iOS-Simulator-MyRNDemoApp.1.3.0-162.zip");
-    return new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), options);
+    return new IOSDriver(new URL("http://127.0.0.1:4723"), options);
   }
 }
